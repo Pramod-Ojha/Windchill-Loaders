@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standard12_1.dtd">
+<NmLoader>
+  <csvLifeCycleTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplate">
+    <csvname>GplmPartLC</csvname>
+    <csvdescription></csvdescription>
+    <csvsupportedClass>wt.fc.WTObject</csvsupportedClass>
+    <csvfolderLocation>/System</csvfolderLocation>
+    <csvenabled>true</csvenabled>
+    <csvrouting>false</csvrouting>
+    <csvbasic>false</csvbasic>
+  </csvLifeCycleTemplateBegin>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>In Work</csvname>
+    <csvphaseState>INWORK</csvphaseState>
+    <csvphaseWorkflow>GplmtPartWF</csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+    <csvassignedPrincipalType></csvassignedPrincipalType>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>Training</csvname>
+    <csvphaseState>TRAINING</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+    <csvassignedPrincipalType></csvassignedPrincipalType>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>Start Training</csvname>
+    <csvphaseState>START_TRAINING</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+    <csvassignedPrincipalType></csvassignedPrincipalType>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>End Training</csvname>
+    <csvphaseState>END_TRAINING</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+    <csvassignedPrincipalType></csvassignedPrincipalType>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>START_TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>START_TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>START_TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>START_TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>END_TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>START_TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>START_TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>START_TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>START_TRAINING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>GplmPartLC</csvlifeCycleName>
+    <csvpredecessorPhaseState>START_TRAINING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvLifeCycleTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplateEnd"></csvLifeCycleTemplateEnd>
+</NmLoader>
