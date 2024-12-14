@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OrganizationConfig SYSTEM "standard12_1.dtd">
+<OrganizationConfig>
+
+
+  <TypeBasedRule>
+    <!-- Part OIR --> 
+	  <EngineRule isDefault="false" enabled="true"> 
+	    <ruleName>GPIMPartOIR</ruleName> 
+	    <ruleSpecification>
+		<![CDATA[
+		
+		
+		
+		
+		]]>
+		
+		</ruleSpecification>
+		  <ruleType type="INIT"/>
+	  </EngineRule>
+         <className>wt.part.WTPart|Windchill.com.GpimPart_Part</className>
+  </TypeBasedRule>
+<!-- End of Part OIR-->
+
+
+
+</OrganizationConfig>
+	
