@@ -1,0 +1,53 @@
+//Document Classification called when the layout is rendered.
+PTC.attributePanel.on("afterRender", function() 
+{
+	var funcOrg = document.getElementById("FunctionalOrganization"); //-------- your attributeid
+	//var parentWindow = PTC.lightbox.getParentWindow();
+	//var parenttype = opener.document.getElementById("infoPageinfoPageIdentityDisplayPanel").innerText;
+	filterfuncOrg(funcOrg);
+});
+
+//Added by vikas  starts
+function filterfuncOrg(funcOrg)
+{
+
+	var typeOfDoc = document.getElementById("createType");
+	var typeOfDocValue, flag;
+	if(typeOfDoc==null){
+		typeOfDoc = document.getElementById("Type");
+		typeOfDocValue = typeOfDoc.innerText;
+	}else
+	{
+		typeOfDocValue = typeOfDoc.options[typeOfDoc.selectedIndex].value;
+		//alert(typeOfDocValue);
+	}
+
+if(typeOfDocValue.indexOf("Windchill.com.StandardDocument")!=-1){      //-------your documentTypeid ....it is optional
+
+	var containerNameText = document.getElementById('containerName').innerText;
+		if(containerNameText=="Standard Library"){       //your product name
+			if(funcOrg != null){
+				for (var i=0;i<funcOrg.length;i++) {
+					var val = funcOrg.options[i].value;
+						if(val!="TATA" && val!="" ){   //attribute internal name like title1
+						funcOrg.remove(i);
+						i--;
+				}
+			}
+		}
+	}
+	else{
+		if(funcOrg != null){
+		for (var i=0;i<funcOrg.length;i++) {
+		var val = funcOrg.options[i].value;
+			if(val=="TATA"){
+			funcOrg.remove(i);
+			i--;
+		}
+	}
+}
+}
+}
+
+}
+//Added by vikas ends
