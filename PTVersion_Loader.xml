@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standardX24.dtd">
+<NmLoader>
+<csvCreateFileBasedBegin handler="wt.series.LoadFileBasedSeries.createFileBasedBegin">
+<csvfileName>ext\version\PTPartVersioning.xml</csvfileName>
+</csvCreateFileBasedBegin>
+</NmLoader>
